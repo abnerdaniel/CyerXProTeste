@@ -9,4 +9,12 @@ namespace CyerXProTeste.Models
         public string Name { get; set; }
     }
 
+    [Table("Authors")]
+    public class AuthorB
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public Book Books { get; set; }
+    }
+
 }

@@ -1,0 +1,9 @@
+﻿global using CyerXProTeste.Infraestrutura;
+global using CyerXProTeste.Keys;
+global using CyerXProTeste.Repositories;
+global using CyerXProTeste.Services;
+global using Microsoft.AspNetCore.Authentication.JwtBearer;
+global using Microsoft.IdentityModel.Tokens;
+global using Microsoft.OpenApi.Models;
+global using System.Text;
+global using FluentValidation.AspNetCore;

@@ -1,6 +1,7 @@
 ﻿using CyerXProTeste.Infraestrutura;
 using CyerXProTeste.Models;
 using CyerXProTeste.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CyerXProTeste.Controllers
@@ -17,6 +18,7 @@ namespace CyerXProTeste.Controllers
             _bookService = bookService ?? throw new ArgumentNullException(nameof(bookService));
         }
 
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult>  Get()
         {
@@ -25,6 +27,7 @@ namespace CyerXProTeste.Controllers
             return Ok(books);
         }
 
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
@@ -36,6 +39,7 @@ namespace CyerXProTeste.Controllers
             return Ok(book);
         }
 
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] Book book)
         {
@@ -47,6 +51,7 @@ namespace CyerXProTeste.Controllers
             return CreatedAtAction(nameof(Get), new { id = book.Id }, book);
         }
 
+        [Authorize]
         [HttpPut("{id}")]
         public async Task<IActionResult> Put(int id, [FromBody] Book book)
         {
@@ -58,6 +63,7 @@ namespace CyerXProTeste.Controllers
             return NoContent();
         }
 
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {

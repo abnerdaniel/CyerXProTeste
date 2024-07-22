@@ -15,12 +15,12 @@ namespace CyerXProTeste.Repositories
 
         public async Task<IEnumerable<Author>> GetAllAsync()
         {
-            return await _context.Authors.Include(a => a.Id).ToListAsync();
+            return await _context.Authors.ToListAsync();
         }
 
         public async Task<Author> GetByIdAsync(int id)
         {
-            return await _context.Authors.Include(a => a.Id).FirstOrDefaultAsync(a => a.Id == id);
+            return await _context.Authors.FirstOrDefaultAsync(a => a.Id == id);
         }
 
         public async Task AddAsync(Author author)
